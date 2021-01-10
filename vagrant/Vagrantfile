@@ -2,7 +2,7 @@ Vagrant.configure("2") do |config|
 
   config.vagrant.plugins = ["vagrant-hostsupdater", "vagrant-vbguest"]
 
-  LOCAL_NETWORK = ENV['LOCAL_NETWORK'] || "192.168.10.10"
+  LOCAL_NETWORK = ENV['LOCAL_NETWORK'] || "192.168.11.11"
   LOCAL_HOSTNAME = ENV['LOCAL_HOSTNAME'] || "flumen.k8s"
   LOCAL_PROJECT_FOLDER = ENV['LOCAL_PROJECT_FOLDER'] || "../"
 
@@ -13,6 +13,10 @@ Vagrant.configure("2") do |config|
     config.vm.synced_folder LOCAL_PROJECT_FOLDER, "/flumen"
     config.vm.network "private_network", ip: LOCAL_NETWORK
     config.vm.hostname = LOCAL_HOSTNAME
+
+    config.hostsupdater.aliases = [
+        "ingress." + LOCAL_HOSTNAME,
+    ]
 
     config.vm.provider "virtualbox" do |vb|
         vb.name = "Flumen"
