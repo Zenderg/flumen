@@ -1,4 +1,4 @@
-DIR=/flumen/vagrant/infra/traefik
+DIR=/flumen/vagrant/traefik
 
 helm repo add traefik https://containous.github.io/traefik-helm-chart
 helm repo update

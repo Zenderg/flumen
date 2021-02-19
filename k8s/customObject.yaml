@@ -1,0 +1,8 @@
+apiVersion: "flumen.com/v1"
+kind: FlumenMigration
+metadata:
+  name: test-crd-object
+spec:
+  username: "newUsername"
+  password: "NewPassowrd"
+  image: "newIMAGEEE"

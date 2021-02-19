@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 
-DIR=/flumen/vagrant/infra/dashboard
+DIR=/flumen/vagrant/dashboard
 
 VERSION="v2.1.0"
 
